@@ -1,9 +1,10 @@
+#![allow(unexpected_cfgs)]
 use pinocchio::{
     account_info::AccountInfo, entrypoint, program_error::ProgramError, pubkey::Pubkey,
     ProgramResult,
 };
 
-use crate::processor::process_initialize;
+use crate::processor::{process_increment, process_initialize};
 
 entrypoint!(process_instruction);
 
@@ -18,6 +19,7 @@ pub fn process_instruction(
 
     match discriminator {
         0 => process_initialize(program_id, accounts, instruction_data),
+        1 => process_increment(program_id, accounts, instruction_data),
         _ => Err(ProgramError::InvalidInstructionData),
     }
 }
