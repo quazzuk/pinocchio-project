@@ -46,8 +46,12 @@ yarn generate-clients
 
 ## Running Tests
 
-Integration tests are written using [LiteSvm](https://github.com/LiteSVM/litesvm). To run integration tests, from project root build and then run
+Integration tests are written using [Mollusk](https://github.com/anza-xyz/mollusk). To run integration tests, from project root build and then run
 
 ```
-cargo test
+./test.sh
+
+or
+
+SBF_OUT_DIR="$(pwd)/target/deploy" cargo test
 ```
