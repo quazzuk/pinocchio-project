@@ -15,14 +15,5 @@ pub enum MyprojectError {
     Invalid = 0x0,
 }
 
-impl solana_program::program_error::PrintProgramError for MyprojectError {
-    fn print<E>(&self) {
-        solana_program::msg!(&self.to_string());
-    }
-}
-
-impl<T> solana_program::decode_error::DecodeError<T> for MyprojectError {
-    fn type_of() -> &'static str {
-        "MyprojectError"
-    }
-}
+// Note: PrintProgramError and DecodeError traits were removed in Solana SDK 3.0.0
+// These implementations are no longer needed

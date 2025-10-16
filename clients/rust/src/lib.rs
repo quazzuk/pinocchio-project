@@ -15,6 +15,7 @@ pub mod errors {
 }
 
 pub mod shared {
+    #[allow(unused_imports)]
     pub use super::generated::shared::*;
 }
 
