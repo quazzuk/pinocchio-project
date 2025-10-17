@@ -1,7 +1,6 @@
 #![no_std]
 
 pub mod error;
-#[cfg(feature = "idl")]
 pub mod instructions;
 pub mod processor;
 pub mod state;
